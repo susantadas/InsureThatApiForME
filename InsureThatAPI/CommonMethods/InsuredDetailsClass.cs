@@ -5,6 +5,20 @@ using System.Web;
 using InsureThatAPI.Models;
 namespace InsureThatAPI.CommonMethods
 {
+    public class EnumInsuredDetails
+    {
+        //Enum 
+        #region Enum for Insured Details 
+       public enum InsuredResult {
+            Exception =-1,
+            EmailAlreadyExists=-3,
+            InsertedSuccess=1,
+            UpdatedSuccess=2,
+            NoAction=0,
+            PhoneNumberLength=9
+        };
+        #endregion
+    }
     public class InsuredDetailsClass
     {
         #region GET INSURED CUSTOMER DETAILS
@@ -48,7 +62,7 @@ namespace InsureThatAPI.CommonMethods
                     else
                     {
 
-                        insuredref.ErrorMessage = "No Data Available";
+                        insuredref.ErrorMessage.Add("No Data Available");
                         insuredref.Status = "Failure";
                     }
                 }
@@ -101,6 +115,7 @@ namespace InsureThatAPI.CommonMethods
         }
         #endregion
 
-
+        #region AAA
+        #endregion
     }
 }
